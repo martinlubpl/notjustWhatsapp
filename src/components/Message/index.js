@@ -30,6 +30,12 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     maxWidth: '80%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    elevation: 2,
   },
   time: {
     color: 'gray',
