@@ -3,13 +3,22 @@ import { NavigationContainer } from '@react-navigation/native'
 import ChatScreen from '../screens/ChatScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ChatList from '../screens/ChatList'
+import MainTabNavigator from './MainTabNavigator'
 const Stack = createNativeStackNavigator()
 
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Chats">
-        <Stack.Screen name="Chats" component={ChatList} />
+      {/* <Stack.Navigator initialRouteName="Chats"> */}
+      <Stack.Navigator>
+        {/* hide double header */}
+        <Stack.Screen
+          name="TabNav"
+          component={MainTabNavigator}
+          options={{ headerShown: false }}
+        />
+        {/* remove ChatList, now in MainTabNavigator */}
+        {/* <Stack.Screen name="Chats" component={ChatList} /> */}
         <Stack.Screen name="Chat" component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
